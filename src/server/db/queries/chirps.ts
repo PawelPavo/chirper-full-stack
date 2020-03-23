@@ -17,7 +17,7 @@ const one =(id:string) => Query<ChirpsT[]>('SELECT * FROM chirps WHERE id = ?', 
 
 const insert = (text: string, user_id: number) => Query<{ insertId: number }>('INSERT INTO chirps (text, user_id) VALUE (?)', [[text, user_id]]);
 
-const update = ( text: string, id:number) => Query('UPDATE chirps SET text = ? WHERE id = ?', [text, id]);
+const update = (text: string, id:number) => Query('UPDATE chirps SET text = ? WHERE id = ?', [text, id]);
 
 const destory = (id:number) => Query('DELETE FROM chirps WHERE id = ?',[id])
 

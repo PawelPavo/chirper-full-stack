@@ -28,7 +28,6 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-
 //POST /api/chirps
 router.post('/',chirpBody, async (req, res) => {
     const chirp = req.body;
@@ -41,7 +40,7 @@ router.post('/',chirpBody, async (req, res) => {
     }
 });
 
-
+//PUT /api/chirps/:id
 router.put('/:id', async (req, res) =>{
     const id = Number(req.params.id)
     const chirpText = req.body.text
@@ -55,6 +54,7 @@ router.put('/:id', async (req, res) =>{
     }
 })
 
+//DELETE /api/chirps/:id
 router.delete('/:id', async (req, res) =>{
     const id = Number(req.params.id);
     try {
