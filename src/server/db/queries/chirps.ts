@@ -11,7 +11,7 @@ interface ChirpsT {
 }
 
 
-const all = () => Query<ChirpsT[]>('SELECT chirps.*, users.name FROM chirps JOIN users ON users.id = chirps.user_id');
+const all = () => Query<ChirpsT[]>('SELECT chirps.*, users.name FROM chirps JOIN users ON users.id = chirps.user_id ORDER BY chirps.id');
 
 const one =(id:string) => Query<ChirpsT[]>('SELECT * FROM chirps WHERE id = ?', [id]);
 
