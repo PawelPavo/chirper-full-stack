@@ -14,11 +14,13 @@ class Details extends React.Component<DetailsProps, DetailsState> {
             chirp: {
                 id: 0,
                 user: '',
-                text: ''
+                text: '',
+                name:''
             },
             user: '',
             text: '',
-            id: 0
+            id: 0,
+            name:''
         };
     }
 
@@ -56,24 +58,24 @@ class Details extends React.Component<DetailsProps, DetailsState> {
                 <div className="d-flex justify-content-center my-5">
                     <div className="col-8 shadow">
                         <h4 className="text-primary mt-3"><FaUser /> Edit Name</h4>
-                        <input type="text" className="form-control" aria-describedby="basic-addon1"
+                        {/* <input type="text" className="form-control" aria-describedby="basic-addon1"
                             value={this.state.user}
                             onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.setState({ user: e.target.value })}
-                        />
+                        /> */}
                         <section className="row mt-2 justify-content-center">
                             <div className="col-md-12">
                                 <form className="form-group p-3">
                                     <select className="form-control" value={this.state.user} onChange={(e: React.ChangeEvent<HTMLSelectElement>) => this.setState({ user: e.target.value })}>
-                                        <option value="1">Pawel</option>
-                                        <option value="2">David</option>
-                                        <option value="3">Alex</option>
-                                        <option value="4">Lukasz</option>
-                                        <option value="5">Richard</option>
-                                        <option value="6">Karolina</option>
-                                        <option value="7">Kat</option>
-                                        <option value="8">Greg</option>
-                                        <option value="9">Konstanty</option>
-                                        <option value="10">Freya</option>
+                                        <option value="1" disabled>Pawel</option>
+                                        <option value="2" disabled>David</option>
+                                        <option value="3" disabled>Alex</option>
+                                        <option value="4" disabled>Lukasz</option>
+                                        <option value="5" disabled>Richard</option>
+                                        <option value="6" disabled>Karolina</option>
+                                        <option value="7" disabled>Kat</option>
+                                        <option value="8" disabled>Greg</option>
+                                        <option value="9" disabled>Konstanty</option>
+                                        <option value="10" disabled>Freya</option>
                                     </select>
                                 </form>
                             </div>
@@ -101,6 +103,7 @@ interface DetailsState {
     user: string;
     text: string;
     id: number;
+    name: string;
 }
 
 export default Details;
